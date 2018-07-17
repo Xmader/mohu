@@ -32,8 +32,10 @@ else {
         // console.info('Action:', e.action);
         // console.info('Text:', e.text);
         // console.info('Trigger:', e.trigger);
-        if (is_Firefox) { alert('复制失败!\n\n请手动进行复制!') }
-        else { alert("复制成功!\n\n我感觉你们还要削习一个") }
+        // if (is_Firefox) { alert('复制失败!\n\n请手动进行复制!') }
+        // else { 
+            alert("复制成功!\n\n我感觉你们还要削习一个") 
+        // }
         e.clearSelection();
     });
     clipboard.on('error', function (e) {
