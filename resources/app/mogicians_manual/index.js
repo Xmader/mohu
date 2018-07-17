@@ -19,13 +19,13 @@ const init_video_img_modal = (src, title, type) => {
     $("#m_title").text(title)
     $("#m_body").html(type == "img" ? `<img src="${src}" />` : `<video src="${src}" preload="Metadata" controls></video>`)
     $("#copy").hide()
-    if (is_Firefox) {
+    if (type == "img" || !is_electron_app) {
         $(".download_video").remove()
-        $(".modal-footer").prepend(`<a href="${src}" target="_blank" class="btn btn-primary download_video">下载${type == "img" ? "图片" : "视频"}</a>`)
+        $(".modal-footer").prepend(`<a href="${src}" target="_blank" class="btn btn-primary download_video" download>下载${type == "img" ? "图片" : "视频"}</a>`)
     }
 }
 
-// const is_electron_app = navigator.userAgent.indexOf("Electron") > -1
+var is_electron_app = navigator.userAgent.indexOf("Electron") > -1
 const is_Firefox = navigator.userAgent.indexOf("Firefox") > -1;
 const is_Chrome = navigator.userAgent.indexOf("Chrome") > -1;
 

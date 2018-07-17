@@ -1,4 +1,4 @@
-const is_electron_app = navigator.userAgent.indexOf("Electron") > -1
+var is_electron_app = navigator.userAgent.indexOf("Electron") > -1
 var clipboard, dialog, path, copy
 
 if (is_electron_app) {
