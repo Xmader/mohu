@@ -19,10 +19,9 @@ const init_video_img_modal = (src, title, type) => {
     $("#m_title").text(title)
     $("#m_body").html(type == "img" ? `<img src="${src}" />` : `<video src="${src}" preload="Metadata" controls></video>`)
     $("#copy").hide()
-    if (type == "img" || !is_electron_app) {
-        $(".download_video").remove()
-        $(".modal-footer").prepend(`<a href="${src}" target="_blank" class="btn btn-primary download_video" download>下载${type == "img" ? "图片" : "视频"}</a>`)
-    }
+
+    $(".download_video").remove()
+    $(".modal-footer").prepend(`<a href="${src}" target="_blank" class="btn btn-primary download_video" download>下载${type == "img" ? "图片" : "视频"}</a>`)
 }
 
 var is_electron_app = navigator.userAgent.indexOf("Electron") > -1
@@ -62,7 +61,7 @@ $.get("https://mohu.oss-cn-shanghai.aliyuncs.com/" + t + ".json", (data) => {
                     break;
                 }
                 case "chang": {
-                    item_html += `<li class="list-group-item grey">${data[key][items[a]]}<a href="${data["url"]}${items[a]}.mp3" target="_blank" class="download_music"><i class="fa fa-download" aria-hidden="true"></i></a><audio class="audio${is_Firefox ? "_Firefox" : ""}" src="${data["url"]}${items[a]}.mp3" controls></audio></li>`
+                    item_html += `<li class="list-group-item grey">${data[key][items[a]]}<a href="${data["url"]}${items[a]}.mp3" target="_blank" class="download_music" download><i class="fa fa-download" aria-hidden="true"></i></a><audio class="audio${is_Firefox ? "_Firefox" : ""}" src="${data["url"]}${items[a]}.mp3" controls></audio></li>`
                     break;
                 }
                 case "videos": {
