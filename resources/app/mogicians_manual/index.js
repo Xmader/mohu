@@ -11,7 +11,7 @@ const getArgs = () => {
 
 const init_modal = (key, a) => {
     $("#m_title").text(json[key]["titles"][a])
-    $("#m_body").html(json[key]["contents"][a].replace(/\n/g, "</p><p>"))
+    $("#m_body").html("<p>"+json[key]["contents"][a].replace(/\n/g, "</p><p>"))
     $("#m_unformatted_body")[0].value = json[key]["contents"][a]
 }
 
