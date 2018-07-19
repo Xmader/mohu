@@ -22,11 +22,13 @@ const init_video_img_modal = (src, title, type) => {
 
     $(".download_video").remove()
     $(".modal-footer").prepend(`<a href="${src}" target="_blank" class="btn btn-primary download_video" download>下载${type == "img" ? "图片" : "视频"}</a>`)
+
+    $(".modal-body").css("padding", "20px 0px")
 }
 
 var is_electron_app = navigator.userAgent.indexOf("Electron") > -1
 const is_Firefox = navigator.userAgent.indexOf("Firefox") > -1;
-const is_Chrome = (navigator.userAgent.indexOf("Chrome") > -1) && window.chrome;
+const is_Chrome = (navigator.userAgent.indexOf("Chrome") > -1) && navigator.userAgent.indexOf("Safari") > -1 && !(navigator.userAgent.indexOf("Edge") > -1);
 
 var t = getArgs()["type"] || "shuo"
 
