@@ -12,6 +12,18 @@
         "dst": "104.27.147.183"
     },
     {
+        "src": "xmader.github.io",
+        "dst": "sni.github.map.fastly.net"
+    },
+    {
+        "src": "hahaxixi.github.io",
+        "dst": "sni.github.map.fastly.net"
+    },
+    {
+        "src": "raw.githubusercontent.com",
+        "dst": "151.101.164.133"
+    },
+    {
         "regex": true,
         "src": "(.*\\.|)cnzz\\.com",
         "dst": "0.0.0.0"
