@@ -10,7 +10,11 @@
 
 * 内置一个续命时钟和一个暴力续命程序
 
-* 内置一个 好几百个教授一致通过 的 `膜法指南`
+* 内置一个 好几百个教授一致通过 的 `膜法指南` 
+
+    * 视频加载速度可能有些慢，请耐心等候
+
+* 内置 `乳包指南`
 
 * 内置三个镆铪/乳苞小游戏:
 
@@ -64,6 +68,8 @@ electron-packager . MohuAPP   --out ../../OutApp/ --electron-version 2.0.4 --ove
 * [Hydrogen](https://github.com/Xmader/hydrogen/tree/linux) (参考了其landing页面)
 
 * [膜法指南 网页版](https://github.com/Xmader/mogicians_manual) (本项目内置了【膜法指南】网页版)
+
+* [乳包指南](https://github.com/Xmader/rubao_manual) (本项目内置了乳包指南)
 
 * [【膜法指南】安卓客户端](https://github.com/naco-siren/mogicians_manual_public_release)
 
