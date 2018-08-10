@@ -1,6 +1,6 @@
 # Mohu App
 
-[English](https://github.com/Xmader/mohu/blob/master/README.md) | [中文](https://github.com/Xmader/mohu/blob/master/README_zh.md)
+[English](https://github.com/Xmader/mohu/blob/master/README_en.md) | [中文](https://github.com/Xmader/mohu/blob/master/README.md)
 
 一个simple的膜乎免 番羽土啬 APP
 

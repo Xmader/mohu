@@ -1,6 +1,6 @@
 # Mohu App
 
-[English](https://github.com/Xmader/mohu/blob/master/README.md) | [中文](https://github.com/Xmader/mohu/blob/master/README_zh.md)
+[English](https://github.com/Xmader/mohu/blob/master/README_en.md) | [中文](https://github.com/Xmader/mohu/blob/master/README.md)
 
 A simple APP of Mohu, no climbing over the GFW needed
 
