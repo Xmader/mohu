@@ -26,15 +26,15 @@ A simple APP of Mohu, no climbing over the GFW needed
 
 You can download the source code and build it yourself, or download the built version from following links:
 
-[for Windows 32bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-ia32.zip)
+[for Windows 32bit](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-win32-ia32.zip)
 
-[for Windows 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-x64.zip)
+[for Windows 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-win32-x64.zip)
 
-[for Linux 32bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-ia32.zip)
+[for Linux 32bit](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-linux-ia32.zip)
 
-[for Linux 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-x64.zip)
+[for Linux 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-linux-x64.zip)
 
-[for MacOS 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
+[for MacOS 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-darwin-x64.zip)
 
 ## Build
 

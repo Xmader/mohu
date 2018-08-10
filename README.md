@@ -24,17 +24,19 @@
 
 ## 下载
 
+> v1版已停止更新，请切换到[`master`分支](https://github.com/Xmader/mohu)下载最新版
+
 你可以下载源码自行构建, 或者直接在下面下载构建好的可执行版本:
 
-[Windows 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-ia32.zip)
+[Windows 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-win32-ia32.zip)
 
-[Windows 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-x64.zip)
+[Windows 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-win32-x64.zip)
 
-[Linux 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-ia32.zip)
+[Linux 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-linux-ia32.zip)
 
-[Linux 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-x64.zip)
+[Linux 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-linux-x64.zip)
 
-[MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
+[MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v1/MohuAPP-darwin-x64.zip)
 
 ## 构建
 
