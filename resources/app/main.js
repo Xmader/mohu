@@ -1,7 +1,8 @@
 const electron = require('electron');
 const fs = require("fs");
 const path = require('path');
-const { init_hosts, main_host_is_existed, get_sudo_pswd } = require("./hosts")
+//const { init_hosts, main_host_is_existed, get_sudo_pswd } = require("./hosts")
+const localProxy = require('./local_proxy');
 const { check_update, manual_check_update } = require("./check_update")
 const copy_current_url = require("./copy_current_url")
 
@@ -22,7 +23,28 @@ app.on("quit", (ev) => {
     app.exit(0);
 })
 
-app.on('ready', createWindow);
+//app.on('ready', createWindow);
+
+var proxyAddress;
+
+app.on('ready', function() {
+    localProxy.run(function(error, address) {
+        if (error) {
+            electron.dialog.showMessageBox({
+                type: "error",
+                buttons: ["确定"],
+                defaultId: 0,
+                title: "错误",
+                message: `${error}`
+            });
+            app.exit(1);
+        } else {
+            proxyAddress = address;
+            createWindow();
+        }
+    });
+});
+
 
 // const isDev = true
 const isDev = process.env.NODE_ENV === "development" || process.env.DEBUG_PROD === "true";
@@ -202,10 +224,10 @@ const template = [
     {
         label: '高级',
         submenu: [
-            {
-                label: '增加免番羽土啬hosts',
-                click() { init_hosts() }
-            },
+            // {
+            //     label: '增加免番羽土啬hosts',
+            //     click() { init_hosts() }
+            // },
             // { type: 'separator' },//分割线
             {
                 label: '检查更新',
@@ -278,9 +300,9 @@ function createWindow() {
 
 
     landingWindow.once("show", () => {
-        if (!main_host_is_existed()) {
-            init_hosts()
-        }
+        // if (!main_host_is_existed()) {
+        //     init_hosts()
+        // }
 
         // Create the browser window.
         mainWindow = new BrowserWindow({
@@ -334,7 +356,12 @@ function createWindow() {
         })
 
         // mainWindow.loadURL(`file://${__dirname}/app.html`);
-        mainWindow.loadURL("https://www.mohu.club/")
+        // mainWindow.loadURL("https://www.mohu.club/")
+        mainWindow.webContents.session.setProxy({
+            proxyRules: 'socks5://' + proxyAddress
+        }, function() {
+            mainWindow.loadURL('https://www.mohu.club/');
+        });
 
         Menu.setApplicationMenu(menu)
     })
