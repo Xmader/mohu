@@ -20,8 +20,8 @@ app.on("quit", (ev) => {
 
 var proxyAddress;
 
-app.on('ready', function() {
-    localProxy.run(function(error, address) {
+app.on('ready', function () {
+    localProxy.run(function (error, address) {
         if (error) {
             dialog.showMessageBox({
                 type: "error",
@@ -59,18 +59,18 @@ const open_clock_win = (t) => {
 
 }
 
-const open_mogicians_manual = () => {
-    mogicians_manual_win = new BrowserWindow({
+const open_manual = (ty) => {
+    var manual_win = new BrowserWindow({
         width: 1100,
         height: 740,
-        icon: path.join(__dirname, "mogicians_manual", 'icon.png'),
-        title: "膜法指南",
+        icon: path.join(__dirname, "imgs", ty == "mogicians" ? 'mogicians_manual.png' : "rubao_manual.jpg"),
+        title: `${ty == "mogicians" ? "膜法" : "乳包"}指南`,
         webPreferences: {
             // webSecurity: false,  // 禁用同源策略
         }
     })
-    mogicians_manual_win.setMenu(null)
-    mogicians_manual_win.loadURL(`file://${__dirname}/mogicians_manual/index.html`)
+    manual_win.setMenu(null)
+    manual_win.loadURL(ty == "mogicians" ? "https://xmader.github.io/mogicians_manual/" : "https://xmader.github.io/rubao_manual/")
 
 }
 
@@ -145,7 +145,11 @@ const template = [
             },
             {
                 label: "膜法指南",
-                click: () => { open_mogicians_manual() }
+                click: () => { open_manual("mogicians") }
+            },
+            {
+                label: "乳包指南",
+                click: () => { open_manual("rubao") }
             },
             {
                 label: "小游戏",
@@ -181,7 +185,11 @@ const template = [
     },
     {
         label: "膜法指南",
-        click: () => { open_mogicians_manual() }
+        click: () => { open_manual("mogicians") }
+    },
+    {
+        label: "乳包指南",
+        click: () => { open_manual("rubao") }
     },
     {
         label: '视图',
@@ -328,7 +336,7 @@ function createWindow() {
         mainWindow.on('closed', function (event) {
             mainWindow.removeAllListeners();
             mainWindow = null;
-            
+
             if (process.platform === "darwin") {
                 app.exit(0);
             }
@@ -338,7 +346,7 @@ function createWindow() {
         // mainWindow.loadURL("https://www.mohu.club/")
         mainWindow.webContents.session.setProxy({
             proxyRules: 'socks5://' + proxyAddress
-        }, function() {
+        }, function () {
             mainWindow.loadURL('https://www.mohu.club/');
         });
 
