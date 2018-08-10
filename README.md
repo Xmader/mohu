@@ -2,43 +2,43 @@
 
 [English](https://github.com/Xmader/mohu/blob/master/README.md) | [中文](https://github.com/Xmader/mohu/blob/master/README_zh.md)
 
-A simple APP of Mohu, no climbing over the GFW needed
+一个simple的膜乎免 番羽土啬 APP
 
-[![+1s](%CE%98..%CE%98-%2B1s-green.svg)](https://en.wikipedia.org/wiki/Moha_culture)
+[![+1s](%CE%98..%CE%98-%2B1s-green.svg)](https://zh.wikipedia.org/wiki/%E8%86%9C%E8%9B%A4%E6%96%87%E5%8C%96)
 
-## Features
+## 功能
 
-* Auto add hosts, Browse Mohu without climbing over the GFW
+* 自动添加hosts, 免 番羽土啬 浏览膜乎
 
-* Include a continuing-life(xuming) clock and a violently-continuing-life(baoli xuming) programme
+* 内置一个续命时钟和一个暴力续命程序
 
-* Include `Mogicians Manual`
+* 内置一个 好几百个教授一致通过 的 `膜法指南`
 
-* Include three moha/rubao small games:
+* 内置三个镆铪/乳苞小游戏:
 
     * Flappy Winnie
     * Flappy Frog
-    * Baozi Ninja
+    * 切包子
 
-* Auto update
+* 自动检查更新
 
-## Download
+## 下载
 
-You can download the source code and build it yourself, or download the built version from following links:
+你可以下载源码自行构建, 或者直接在下面下载构建好的可执行版本:
 
-[for Windows 32bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-ia32.zip)
+[Windows 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-ia32.zip)
 
-[for Windows 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-x64.zip)
+[Windows 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-x64.zip)
 
-[for Linux 32bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-ia32.zip)
+[Linux 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-ia32.zip)
 
-[for Linux 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-x64.zip)
+[Linux 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-x64.zip)
 
-[for MacOS 64bit](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
+[MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
 
-## Build
+## 构建
 
-> If you downloaded the built version, you can simply skip this step.
+> 如果您下载的是构建好的版本, 您可以直接跳过泽一步
 
 ```bash
 cd ./resources/app
@@ -46,36 +46,38 @@ cd ./resources/app
 electron-packager . MohuAPP   --out ../../OutApp/ --electron-version 2.0.4 --overwrite --icon=./logo.ico --tmpdir=../../OutApp/Temp/ --ignore=packager.sh --download.cache=../../OutApp/Temp/ --download.mirror="https://npm.taobao.org/mirrors/electron/"
 ```
 
-## Run
+## 运行
 
-1. Unzip all the files
-2. find `MohuAPP.exe`(Windows) or `MohuAPP`(Linux) or `MohuAPP.app`(MacOS), just run it
+1. 解压全部文件
+2. 找到 `MohuAPP.exe`(Windows) 或 `MohuAPP`(Linux) 或 `MohuAPP.app`(MacOS)，双击运行
 
-## Notes
+## 备注
 
-* If you find some bugs in this project, please create a report [here](https://github.com/Xmader/mohu/issues) to help us improve 
+* 如果有bug，请在[这里](https://github.com/Xmader/mohu/issues)向我反馈
 
-## Update History
+## 更新历史
 
-[Read](update_history.md)
+[点我查看](update_history.md)
 
-## With Special Thanks to
+## 特别感谢
 
-> This project references some of their codes when developing
+> 本项目在开发过程中参考了以下项目或用户的部分源代码
 
-* [Hydrogen](https://github.com/Xmader/hydrogen/tree/linux) (Referenced its landing page)
+* [Hydrogen](https://github.com/Xmader/hydrogen/tree/linux) (参考了其landing页面)
 
-* [Mogicians Manual](https://github.com/Xmader/mogicians_manual) (This project includes Mogicians Manual)
+* [膜法指南 网页版](https://github.com/Xmader/mogicians_manual) (本项目内置了【膜法指南】网页版)
 
-* [angry.im](https://angry.im/) (This project uses angry.im's continuing-life(xuming) API)
+* [【膜法指南】安卓客户端](https://github.com/naco-siren/mogicians_manual_public_release)
 
-* [@hahaxixi](https://github.com/hahaxixi) (This project includes his three small games)
+* [angry.im](https://angry.im/) (本项目使用了angry.im的续命API)
 
-* [SwitchHosts!](https://github.com/oldj/SwitchHosts) (Referenced its codes about editing hosts file)
+* [@hahaxixi](https://github.com/hahaxixi) (本项目内置了他的三个小游戏)
+
+* [SwitchHosts!](https://github.com/oldj/SwitchHosts) (参考了其关于修改hosts文件的部分代码)
 
 
-## LICENSE
+## 开源许可证
 
-This software is a free and open source software, it is released under the MIT license.
+本软件是一个完全免费的开源软件, 基于 MIT 协议开源。
 
-> I think I speak very poor English, but anyway I dare to say. This is very important.
+> 很惭愧，就做了一点微小的工作，谢谢大家
