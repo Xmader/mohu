@@ -51,7 +51,7 @@ electron-packager . MohuAPP   --out ../../OutApp/ --electron-version 2.0.4 --ove
 
 ## 备注
 
-* 如果有bug，请在[这里](https://github.com/Xmader/mohu/issues)向我反馈
+* v2.0版的改动非常大，如果有bug，请尽快在[这里](https://github.com/Xmader/mohu/issues)向我反馈
 
 ## 更新历史
 
@@ -70,9 +70,6 @@ electron-packager . MohuAPP   --out ../../OutApp/ --electron-version 2.0.4 --ove
 * [angry.im](https://angry.im/) (本项目使用了angry.im的续命API)
 
 * [@hahaxixi](https://github.com/hahaxixi) (本项目内置了他的三个小游戏)
-
-* [SwitchHosts!](https://github.com/oldj/SwitchHosts) (参考了其关于修改hosts文件的部分代码)
-
 
 ## 开源许可证
 

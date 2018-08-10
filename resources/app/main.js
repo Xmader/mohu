@@ -1,23 +1,16 @@
 const electron = require('electron');
 const fs = require("fs");
 const path = require('path');
-//const { init_hosts, main_host_is_existed, get_sudo_pswd } = require("./hosts")
 const localProxy = require('./local_proxy');
 const { check_update, manual_check_update } = require("./check_update")
 const copy_current_url = require("./copy_current_url")
 
-var { app, BrowserWindow, ipcMain, Menu, shell } = electron;
-let mainWindow = null, landingWindow = null, locale;
+var { app, BrowserWindow, ipcMain, Menu, shell, dialog } = electron;
+let mainWindow = null, landingWindow = null;
 
 app.on('window-all-closed', () => {
     app.quit();
 });
-
-var forceQuit = false;
-
-app.on('before-quit', (ev) => {
-    forceQuit = true;
-})
 
 app.on("quit", (ev) => {
     app.exit(0);
@@ -30,7 +23,7 @@ var proxyAddress;
 app.on('ready', function() {
     localProxy.run(function(error, address) {
         if (error) {
-            electron.dialog.showMessageBox({
+            dialog.showMessageBox({
                 type: "error",
                 buttons: ["确定"],
                 defaultId: 0,
@@ -224,11 +217,6 @@ const template = [
     {
         label: '高级',
         submenu: [
-            // {
-            //     label: '增加免番羽土啬hosts',
-            //     click() { init_hosts() }
-            // },
-            // { type: 'separator' },//分割线
             {
                 label: '检查更新',
                 click() { manual_check_update() }
@@ -237,11 +225,6 @@ const template = [
                 label: '关于',
                 click() { shell.openExternal("https://github.com/Xmader/mohu") }
             },
-            // {
-            //     label: 'Linux获取sudo密码',
-            //     click() { get_sudo_pswd() }
-            // },
-
         ]
     },
 
@@ -300,10 +283,6 @@ function createWindow() {
 
 
     landingWindow.once("show", () => {
-        // if (!main_host_is_existed()) {
-        //     init_hosts()
-        // }
-
         // Create the browser window.
         mainWindow = new BrowserWindow({
             width: 1100,

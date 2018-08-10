@@ -20,16 +20,6 @@ cd ../../OutApp/MohuAPP-${platform}-${arch}
 rm LICENSE LICENSES.chromium.html version
 cp ../../README.md ./
 
-if [ ${platform} != "win32" -a ${platform} != "darwin" ]
-then
-    rm resources/app/auto_uac_add_hosts.exe
-fi
-
-if [ ${platform} = "darwin" ]
-then
-    rm MohuAPP.app/Contents/Resources/app/auto_uac_add_hosts.exe
-fi
-
 cd ../ # 在OutApp文件夹
 electron-installer-zip MohuAPP-${platform}-${arch} ../dist/MohuAPP-${platform}-${arch}.zip
 rm -rf MohuAPP-${platform}-${arch}
