@@ -10,9 +10,6 @@ if [ ${platform} = "darwin" -a $(uname -o) = "Msys" ]
 then
     echo "由于系统限制，目前只能在*unix系统上打包darwin(MacOS)版的APP"
     exit
-    # echo "需要事先用管理员身份运行electron-packager打包命令, 以打包darwin(MacOS)版的APP"
-    # electron-packager . MohuAPP --platform=darwin --arch=x64  --out ../../OutApp/ --electron-version 2.0.4 --overwrite --icon=./logo.ico --tmpdir=../../OutApp/Temp/ --ignore=packager.sh
-    # powershell Start-Process electron-packager -ArgumentList \". MohuAPP --platform=darwin --arch=x64  --out ../../OutApp/ --electron-version 2.0.4 --overwrite --icon=./logo.ico --tmpdir=../../OutApp/Temp/ --ignore=packager.sh\" -WorkingDirectory \"F:\\mohu\\resources\\app\" -Verb runas -Wait
 fi
 
 electron-packager . MohuAPP --platform=${platform} --arch=${arch}  --out ../../OutApp/ --electron-version 2.0.4 --overwrite --icon=./logo.ico --tmpdir=../../OutApp/Temp/ --ignore=packager.sh --download.cache=../../OutApp/Temp/ --download.mirror="https://npm.taobao.org/mirrors/electron/"

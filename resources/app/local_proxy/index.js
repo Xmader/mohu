@@ -26,7 +26,7 @@ var hosts = [];
     // 这个例子屏蔽站长统计
     {
       regex: true,          // 正则表达式
-      src: '.cnzz.com',
+      src: '(.*\\.|)cnzz\\.com',
       dst: '0.0.0.0'
     }
   ]

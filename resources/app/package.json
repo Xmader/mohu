@@ -1,7 +1,7 @@
 {
     "name": "mohu",
     "productName": "Mohu APP",
-    "version": "1.2.1",
+    "version": "2.0.0",
     "description": "膜乎APP",
     "main": "./main.js",
     "repository": {
@@ -9,30 +9,6 @@
         "url": "https://github.com/Xmader/mohu"
     },
     "author": "xmader",
-    "build": {
-        "appId": "com.mohu.app",
-        "productName": "MohuAPP",
-        "directories": {
-            "output": "../../OutApp"
-        },
-        "electronDownload": {
-            "cache": "../../OutApp/Temp",
-            "mirror": "https://npm.taobao.org/mirrors/electron/"
-        },
-        "electronVersion": "2.0.4",
-        "mac": {
-            "target": [
-                "zip"
-            ]
-        },
-        "win": {
-            "target": "zip",
-            "extraFiles": [
-                "../../README.md",
-                "../../README_zh.md"
-            ]
-        }
-    },
     "scripts": {
         "start": "electron .",
         "packager-win64": "git-bash ./packager.sh win32 x64 #只能在windows系统上运行此打包脚本",
@@ -42,7 +18,6 @@
         "packager-darwin64": "./packager.sh darwin x64 #只能在*unix系统上运行此打包脚本",
         "packager-win": "npm run packager-win64 && npm run packager-win32",
         "packager-unix": "npm run packager-linux64 && npm run packager-linux32 && npm run packager-darwin64"
-    
     },
     "license": "MIT"
 }

@@ -1,6 +1,48 @@
 [
-  {
-    "src": "www.mohu.club",
-    "dst": "104.27.146.57"
-  }
+    {
+        "src": "www.mohu.club",
+        "dst": "104.27.146.57"
+    },
+    {
+        "src": "www.ruhu.ml",
+        "dst": "104.28.3.22"
+    },
+    {
+        "src": "www.pin-cong.com",
+        "dst": "104.27.147.183"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)cnzz\\.com",
+        "dst": "0.0.0.0"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)googlesyndication\\.com",
+        "dst": "0.0.0.0"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)google-analytics\\.com",
+        "dst": "0.0.0.0"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)51\\.la",
+        "dst": "0.0.0.0"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)51yes\\.com",
+        "dst": "0.0.0.0"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)baidu\\.com",
+        "dst": "0.0.0.0"
+    },
+    {
+        "src": "cpro.baidustatic.com",
+        "dst": "0.0.0.0"
+    }
 ]
