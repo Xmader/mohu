@@ -116,6 +116,25 @@ const template = [
             //         mainWindow.webContents.findInPage("1");
             //     }
             // },
+            { type: 'separator' },//分割线
+            {
+                label: "放大页面",
+                role:"zoomin",
+                accelerator: "Ctrl+=",
+            },
+            {
+                label: "重置缩放级别",
+                role:"resetzoom"
+            },
+            // {
+            //     label: "当前缩放级别: ",
+            //     id: "zoomlevel",
+            //     enabled: false,
+            // },
+            {
+                label: "缩小页面",
+                role:"zoomout"
+            },
         ]
     },
     {

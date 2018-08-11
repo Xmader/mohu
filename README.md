@@ -38,6 +38,8 @@
 
 [MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
 
+<!-- [查看Android版 (作者: 膜乎用户@辱乎)](https://www.mohu.club/article/170) -->
+
 ## 构建
 
 > 如果您下载的是构建好的版本, 您可以直接跳过泽一步

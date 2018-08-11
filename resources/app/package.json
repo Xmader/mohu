@@ -1,7 +1,7 @@
 {
     "name": "mohu",
     "productName": "Mohu APP",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "膜乎APP",
     "main": "./main.js",
     "repository": {
@@ -17,7 +17,8 @@
         "packager-linux32": "./packager.sh linux ia32",
         "packager-darwin64": "./packager.sh darwin x64 #只能在*unix系统上运行此打包脚本",
         "packager-win": "npm run packager-win64 && npm run packager-win32",
-        "packager-unix": "npm run packager-linux64 && npm run packager-linux32 && npm run packager-darwin64"
+        "packager-unix": "npm run packager-linux64 && npm run packager-linux32 && npm run packager-darwin64",
+        "packager-win-can-package":"npm run packager-win64 && npm run packager-win32 && git-bash ./packager.sh linux x64 && git-bash ./packager.sh linux ia32"
     },
     "license": "MIT"
 }
