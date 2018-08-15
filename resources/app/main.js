@@ -162,6 +162,10 @@ const template = [
                 click: () => { mainWindow.webContents.loadURL("https://zh.wikipedia.org/") }
             },
             {
+                label: "端点星计划 (备份微信、微博等平台被删文章)",
+                click: () => { mainWindow.webContents.loadURL("https://terminus2049.github.io/") }
+            },
+            {
                 label: "续命",
                 submenu: [
                     {
