@@ -119,12 +119,12 @@ const template = [
             { type: 'separator' },//分割线
             {
                 label: "放大页面",
-                role:"zoomin",
+                role: "zoomin",
                 accelerator: "Ctrl+=",
             },
             {
                 label: "重置缩放级别",
-                role:"resetzoom"
+                role: "resetzoom"
             },
             // {
             //     label: "当前缩放级别: ",
@@ -133,7 +133,7 @@ const template = [
             // },
             {
                 label: "缩小页面",
-                role:"zoomout"
+                role: "zoomout"
             },
         ]
     },
@@ -148,6 +148,18 @@ const template = [
                 click: () => {
                     mainWindow.webContents.loadURL("https://www.mohu.club/")
                 }
+            },
+            {
+                label: "辱乎",
+                click: () => { mainWindow.webContents.loadURL("https://www.ruhu.ml/") }
+            },
+            {
+                label: "品葱",
+                click: () => { mainWindow.webContents.loadURL("https://www.pin-cong.com/") }
+            },
+            {
+                label: "中文维基百科",
+                click: () => { mainWindow.webContents.loadURL("https://zh.wikipedia.org/") }
             },
             {
                 label: "续命",
