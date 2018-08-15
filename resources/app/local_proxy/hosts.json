@@ -24,6 +24,14 @@
         "dst": "151.101.164.133"
     },
     {
+        "src": "assets-cdn.github.com",
+        "dst": "151.101.164.133"
+    },
+    {
+        "src": "github.map.fastly.net",
+        "dst": "151.101.164.133"
+    },
+    {
         "regex": true,
         "src": "(.*\\.|)cnzz\\.com",
         "dst": "0.0.0.0"
