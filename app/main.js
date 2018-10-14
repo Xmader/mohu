@@ -13,7 +13,7 @@ const { app, BrowserWindow, ipcMain, Menu, dialog } = require("electron")
 
 const localProxy = require("./local_proxy")
 const check_update = require("./src/check_update")
-const { menu, contextMenu, refresh_menu, manualPageContextMenu } = require("./src/menu")
+const { menu, refresh_menu, showContextMenu } = require("./src/menu")
 
 const isDev = process.argv.pop() == "dev"
 
@@ -64,7 +64,6 @@ const createWindow = (proxyAddress) => {
 
         mainWindow.webContents.on("did-navigate", () => {
             refresh_menu()
-
         })
 
         mainWindow.webContents.on("new-window", (event, url) => {
@@ -125,8 +124,4 @@ ipcMain.on("reload", () => {
     mainWindow.webContents.reloadIgnoringCache()
 })
 
-ipcMain.on("right_btn", (event, is_manual_page) => {
-    const context_menu = is_manual_page ? manualPageContextMenu : contextMenu
-    refresh_menu()
-    context_menu.popup({})
-})
+ipcMain.on("right_btn", showContextMenu)
