@@ -63,7 +63,7 @@ const open_manual = (ty) => {
     var manual_win = new BrowserWindow({
         width: 1100,
         height: 740,
-        icon: path.join(__dirname, "imgs", ty == "mogicians" ? 'mogicians_manual.png' : "rubao_manual.jpg"),
+        icon: path.join(__dirname, "assets", ty == "mogicians" ? 'mogicians_manual.png' : "rubao_manual.jpg"),
         title: `${ty == "mogicians" ? "膜法" : "乳包"}指南`,
         webPreferences: {
             // webSecurity: false,  // 禁用同源策略
