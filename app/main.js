@@ -11,9 +11,9 @@
 const path = require("path")
 const { app, BrowserWindow, ipcMain, Menu, shell, dialog } = require("electron")
 
-const localProxy = require("./local_proxy")
-const check_update = require("./check_update")
-const copy_current_url = require("./copy_current_url")
+const localProxy = require("./src/local_proxy")
+const check_update = require("./src/check_update")
+const copy_current_url = require("./src/copy_current_url")
 
 const isDev = process.argv.pop() == "dev"
 

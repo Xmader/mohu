@@ -4,7 +4,7 @@
  * @copyright Copyright (c) 2018 Xmader
  */
 
-const fetch = require("./libs/node-fetch")
+const fetch = require("../libs/node-fetch")
 const path = require("path")
 const { dialog, shell, app } = require("electron").remote
 
