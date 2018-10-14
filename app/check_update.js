@@ -32,6 +32,9 @@ const found_new_version = (version, new_version) => {
     })
 }
 
+/**
+ * 检查更新
+ */
 const check_update = async () => {
     const req = await fetch(versionCheckApi)
     const data = await req.json()

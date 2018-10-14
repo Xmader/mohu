@@ -1,11 +1,17 @@
-const { ipcRenderer,remote } = require('electron');
-var mainWindow = remote.BrowserWindow.fromId(2)
-var url = mainWindow.webContents.getURL()
+/**
+ * pre.js - 用于外部页面的预加载脚本
+ * @author Xmader
+ * @copyright Copyright (c) 2018 Xmader
+ */
 
-if (url.indexOf("http") >= 0) {
-    
-    window.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        ipcRenderer.send('right_btn');
-    });
+const { ipcRenderer } = require("electron")
+const protocol = location.protocol
+
+// 判断是否是外部页面
+if (protocol == "http" || protocol == "https") {
+    // 添加右键菜单
+    window.addEventListener("contextmenu", (e) => {
+        e.preventDefault()
+        ipcRenderer.send("right_btn")
+    })
 }

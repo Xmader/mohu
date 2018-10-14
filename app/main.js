@@ -1,27 +1,26 @@
-const electron = require('electron');
-const fs = require("fs");
-const path = require('path');
-const localProxy = require('./local_proxy');
-const { check_update, manual_check_update } = require("./check_update")
+/**
+ * Mohu APP
+ * 膜乎免`番羽土啬`APP
+ * 
+ * @author Xmader
+ * @copyright Copyright (c) 2018 Xmader
+ * 
+ * Source Code: https://github.com/Xmader/mohu
+ */
+
+const path = require("path")
+const { app, BrowserWindow, ipcMain, Menu, shell, dialog } = require("electron")
+
+const localProxy = require("./local_proxy")
+const check_update = require("./check_update")
 const copy_current_url = require("./copy_current_url")
 
-var { app, BrowserWindow, ipcMain, Menu, shell, dialog } = electron;
-let mainWindow = null, landingWindow = null;
+const isDev = process.argv.pop() == "dev"
 
-app.on('window-all-closed', () => {
-    app.quit();
-});
+let mainWindow = null, landingWindow = null
 
-app.on("quit", (ev) => {
-    app.exit(0);
-})
-
-//app.on('ready', createWindow);
-
-var proxyAddress;
-
-app.on('ready', function () {
-    localProxy.run(function (error, address) {
+app.on("ready", () => {
+    localProxy.run((error, proxyAddress) => {
         if (error) {
             dialog.showMessageBox({
                 type: "error",
@@ -29,18 +28,13 @@ app.on('ready', function () {
                 defaultId: 0,
                 title: "错误",
                 message: `${error}`
-            });
-            app.exit(1);
+            })
+            app.exit(1)
         } else {
-            proxyAddress = address;
-            createWindow();
+            createWindow(proxyAddress)
         }
-    });
-});
-
-
-// const isDev = true
-const isDev = process.env.NODE_ENV === "development" || process.env.DEBUG_PROD === "true";
+    })
+})
 
 const open_clock_win = (t) => {
     clock_win = new BrowserWindow({
@@ -312,7 +306,7 @@ const contextMenuTemplate = [
 const contextMenu = Menu.buildFromTemplate(contextMenuTemplate);
 
 
-function createWindow() {
+function createWindow(proxyAddress) {
     locale = app.getLocale();
     landingWindow = new BrowserWindow({
         show: false,
@@ -393,6 +387,14 @@ function createWindow() {
         landingWindow.show()
     })
 }
+
+app.on("window-all-closed", () => {
+    app.quit()
+})
+
+app.on("quit", () => {
+    app.exit(0)
+})
 
 ipcMain.on("reload", () => {
     mainWindow.webContents.reloadIgnoringCache()
