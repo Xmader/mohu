@@ -1,3 +1,7 @@
+/**
+ * @author Xmader
+ * @copyright Copyright (c) 2018 Xmader
+ */
 
 /**
  * 格式化已续命时间
@@ -43,11 +47,15 @@ const formatTime = (t) => {
 
 /**
  * 续命1s，并获取已续命时间 (单位:秒)
+ * @param {boolean} get_only - 是否只获取已续命时间，不续命1s
  * @see 续命API: https://angry.im/
  */
-const increase_time = async () => {
+const increase_time = async (get_only = false) => {
     try {
-        const res = await fetch("https://angry.im/p/life", {
+        const res = get_only ? await fetch("https://angry.im/l/life", {
+            method: "GET",
+            mode: "cors"
+        }) : await fetch("https://angry.im/p/life", {
             method: "POST",
             mode: "cors"
         })

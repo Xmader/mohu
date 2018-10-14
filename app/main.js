@@ -49,7 +49,7 @@ const open_clock_win = (t) => {
         useContentSize: true
     })
     clock_win.setMenu(null)
-    clock_win.loadURL(t == "violent" ? `file://${__dirname}/clock/violent.html` : `file://${__dirname}/clock/clock.html`)
+    clock_win.loadURL(t == "violent" ? `file://${__dirname}/clock/clock.html?violent=true` : `file://${__dirname}/clock/clock.html`)
 
 }
 
