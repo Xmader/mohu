@@ -152,10 +152,6 @@ const template = [
                 click: () => { mainWindow.webContents.loadURL("https://www.pin-cong.com/") }
             },
             {
-                label: "中文维基百科",
-                click: () => { mainWindow.webContents.loadURL("https://zh.wikipedia.org/") }
-            },
-            {
                 label: "端点星计划 (备份微信、微博等平台被删文章)",
                 click: () => { mainWindow.webContents.loadURL("https://terminus2049.github.io/") }
             },
