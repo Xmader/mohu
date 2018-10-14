@@ -40,7 +40,7 @@ const open_clock_win = (t) => {
     clock_win = new BrowserWindow({
         // frame: false,
         title: t == "violent" ? "暴力续命" : "续命时钟",
-        icon: path.join(__dirname, 'logo.png'),
+        icon: path.join(__dirname, "assets", 'logo.png'),
         width: 600,
         height: t == "violent" ? 120 : 150,
         resizable: false,
@@ -312,7 +312,7 @@ function createWindow(proxyAddress) {
         show: false,
         frame: isDev,
         title: "膜乎APP",
-        icon: path.join(__dirname, 'logo.png'),
+        icon: path.join(__dirname, "assets", 'logo.png'),
         width: 490,
         height: 400
     })
@@ -324,7 +324,7 @@ function createWindow(proxyAddress) {
         mainWindow = new BrowserWindow({
             width: 1100,
             height: 740,
-            icon: path.join(__dirname, 'logo.png'),
+            icon: path.join(__dirname, "assets", 'logo.png'),
             title: "膜乎APP",
             show: false,
             webPreferences: {
