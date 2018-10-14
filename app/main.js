@@ -49,7 +49,7 @@ const open_clock_win = (t) => {
         useContentSize: true
     })
     clock_win.setMenu(null)
-    clock_win.loadURL(t == "violent" ? `file://${__dirname}/clock/clock.html?violent=true` : `file://${__dirname}/clock/clock.html`)
+    clock_win.loadURL(t == "violent" ? `file://${__dirname}/pages/clock/clock.html?violent=true` : `file://${__dirname}/pages/clock/clock.html`)
 
 }
 
@@ -188,21 +188,21 @@ const template = [
                         label: "Flappy Winnie",
 
                         click: () => {
-                            mainWindow.webContents.loadURL(`file://${__dirname}/flappy_winnie/index.html`)
+                            mainWindow.webContents.loadURL(`file://${__dirname}/pages/flappy_winnie/index.html`)
                         }
                     },
                     {
                         label: "切包子",
 
                         click: () => {
-                            mainWindow.webContents.loadURL(`file://${__dirname}/bao/index.html`)
+                            mainWindow.webContents.loadURL(`file://${__dirname}/pages/bao/index.html`)
                         }
                     },
                     {
                         label: "Flappy Frog",
 
                         click: () => {
-                            mainWindow.webContents.loadURL(`file://${__dirname}/flappy_frog/index.html`)
+                            mainWindow.webContents.loadURL(`file://${__dirname}/pages/flappy_frog/index.html`)
                         }
                     },
                 ]
@@ -371,8 +371,6 @@ function createWindow(proxyAddress) {
             }
         })
 
-        // mainWindow.loadURL(`file://${__dirname}/app.html`);
-        // mainWindow.loadURL("https://www.mohu.club/")
         mainWindow.webContents.session.setProxy({
             proxyRules: 'socks5://' + proxyAddress
         }, function () {
@@ -382,7 +380,7 @@ function createWindow(proxyAddress) {
         Menu.setApplicationMenu(menu)
     })
 
-    landingWindow.loadURL(`file://${__dirname}/landing.html`)
+    landingWindow.loadURL(`file://${__dirname}/pages/landing.html`)
     landingWindow.once('ready-to-show', () => {
         landingWindow.show()
     })
