@@ -1,7 +1,13 @@
 
+/**
+ * 格式化已续命时间
+ * @param {number} t - 已续命时间 (单位:秒)
+ * 
+ * 代码来自: https://angry.im/
+ */
 const formatTime = (t) => {
     if (t == 0) return "0s"
-    ret = ""
+    let ret = ""
     if (t > 60 * 60 * 24 * 30 * 12) {
         ret += Math.floor(t / (60 * 60 * 24 * 30 * 12)) + "y "
         t = t % (60 * 60 * 24 * 30 * 12)
@@ -35,27 +41,21 @@ const formatTime = (t) => {
     return ret.trim()
 }
 
-const get_increased_time = () => { // 获取已续命时间 单位:秒
-    if ($) {
-        $.get("https://angry.im/l/life", function (data) {
-            document.getElementById("time").innerText = formatTime(parseInt(data))
+/**
+ * 续命1s，并获取已续命时间 (单位:秒)
+ * @see 续命API: https://angry.im/
+ */
+const increase_time = async () => {
+    try {
+        const res = await fetch("https://angry.im/p/life", {
+            method: "POST",
+            mode: "cors"
         })
+        const time = await res.text() | 0
+        document.getElementById("time").innerText = formatTime(time)
     }
-    else {
-        console.error("加载jQuery失败, 你们这样子啊, 是不行的!")
-    }
-}
-
-const increase_time = () => {
-
-    if ($) {
-        $.post("https://angry.im/p/life", function (data) {
-            time = formatTime(parseInt(data))
-            document.getElementById("time").innerText = time
-        })
-    }
-    else {
-        console.error("加载jQuery失败, 你们这样子啊, 是不行的!")
-        
+    catch (e) {
+        console.error(e)
+        console.error("你们这样子啊, 是不行的!")
     }
 }

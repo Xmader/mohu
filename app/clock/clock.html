@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>续命时钟</title>
-    <script src="jquery.js"></script>
     <style>
         .right {
             float: right;
         }
+
         .left {
             float: left;
         }
-        body{
+
+        body {
             text-align: center;
         }
 
         .h1,
         h1 {
             font-size: 2.5rem;
-            font-family: "Microsoft YaHei",微软雅黑;
+            font-family: "Microsoft YaHei", 微软雅黑;
             font-weight: 500;
             line-height: 1.1;
             text-align: center;
@@ -76,12 +77,11 @@
         }
 
         small {
-            font-family: "Microsoft YaHei",微软雅黑;
+            font-family: "Microsoft YaHei", 微软雅黑;
             color: #6c757d;
             margin-top: -62.4px;
             margin-left: 0.5em;
         }
-
     </style>
 </head>
 
@@ -91,7 +91,6 @@
     </div>
 
     <div>
-            
         <h1 id="time">???s (获取中, 请稍后)</h1>
         <a id="plus1" href="#" class="btn btn-danger right inline" onclick="increase_time();">+1s</a>
         <small class="left">累计已续命: </small>
@@ -100,9 +99,8 @@
     <script src="xuming.js"></script>
     <script src="clock.js"></script>
     <script>
-            setInterval(get_increased_time, 1000)
-            get_increased_time()
-    </script> 
+        setInterval(increase_time, 1000)
+    </script>
 </body>
 
 </html>
