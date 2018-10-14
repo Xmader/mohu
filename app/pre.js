@@ -8,7 +8,7 @@ const { ipcRenderer } = require("electron")
 const protocol = location.protocol
 
 // 判断是否是外部页面
-if (protocol == "http" || protocol == "https") {
+if (protocol.startsWith("http")) {
     // 添加右键菜单
     window.addEventListener("contextmenu", (e) => {
         e.preventDefault()

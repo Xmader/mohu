@@ -11,7 +11,7 @@
 const path = require("path")
 const { app, BrowserWindow, ipcMain, Menu, shell, dialog } = require("electron")
 
-const localProxy = require("./src/local_proxy")
+const localProxy = require("./local_proxy")
 const check_update = require("./src/check_update")
 const copy_current_url = require("./src/copy_current_url")
 
@@ -42,7 +42,7 @@ const open_clock_win = (t) => {
         title: t == "violent" ? "暴力续命" : "续命时钟",
         icon: path.join(__dirname, "assets", 'logo.png'),
         width: 600,
-        height: t == "violent" ? 120 : 150,
+        height: t == "violent" ? 130 : 175,
         resizable: false,
         maximizable: false,
         alwaysOnTop: true,
@@ -256,7 +256,7 @@ const template = [
         submenu: [
             {
                 label: '检查更新',
-                click() { manual_check_update() }
+                click() { check_update() }
             },
             {
                 label: '关于',

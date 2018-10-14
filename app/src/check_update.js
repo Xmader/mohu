@@ -6,7 +6,7 @@
 
 const fetch = require("../libs/node-fetch")
 const path = require("path")
-const { dialog, shell, app } = require("electron").remote
+const { dialog, shell, app } = require("electron")
 
 const versionCheckApi = "https://raw.githubusercontent.com/Xmader/mohu/master/app/package.json"
 const DownloadUrl = "https://github.com/Xmader/mohu/releases/latest"
