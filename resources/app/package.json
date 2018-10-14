@@ -20,5 +20,9 @@
         "packager-unix": "npm run packager-linux64 && npm run packager-linux32 && npm run packager-darwin64",
         "packager-win-can-package":"npm run packager-win64 && npm run packager-win32 && git-bash ./packager.sh linux x64 && git-bash ./packager.sh linux ia32"
     },
+    "devDependencies": {
+        "electron-installer-zip": "^0.1.2",
+        "electron-packager": "^12.1.2"
+    },
     "license": "MIT"
 }
