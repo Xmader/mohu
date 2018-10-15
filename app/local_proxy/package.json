@@ -4,7 +4,8 @@
   "description": "本地socksv5代理, 用于替换hosts",
   "main": "index.js",
   "dependencies": {
-    "socksv5": "^0.0.6"
+    "socksv5": "^0.0.6",
+    "wikipedia-proxy": "github:Xmader/wikipedia-proxy"
   },
   "author": "xmader",
   "license": "MIT"

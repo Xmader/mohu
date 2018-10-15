@@ -9,7 +9,7 @@ fi
 electron-packager . MohuAPP --app-copyright="Copyright (c) 2018 Xmader" \
     --platform=${platform} --arch=${arch} --electron-version 3.0.4 \
     --out ../OutApp/ --overwrite \
-    --icon=./assets/logo.ico --ignore=packager.sh \
+    --icon=./assets/logo.ico --ignore=packager.sh --ignore="^\/node_modules" \
     --tmpdir=../OutApp/Temp/ --download.cache=../OutApp/Temp/ \
     --download.mirror="https://npm.taobao.org/mirrors/electron/"
 
