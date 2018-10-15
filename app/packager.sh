@@ -7,10 +7,11 @@ else
 fi
 
 electron-packager . MohuAPP --app-copyright="Copyright (c) 2018 Xmader" \
-    --platform=${platform} --arch=${arch} --electron-version 2.0.4 \
+    --platform=${platform} --arch=${arch} --electron-version 3.0.4 \
     --out ../OutApp/ --overwrite \
     --icon=./assets/logo.ico --ignore=packager.sh \
-    --tmpdir=../OutApp/Temp/ --download.cache=../OutApp/Temp/ --download.mirror="https://npm.taobao.org/mirrors/electron/"
+    --tmpdir=../OutApp/Temp/ --download.cache=../OutApp/Temp/ \
+    --download.mirror="https://npm.taobao.org/mirrors/electron/"
 
 cd ../OutApp/MohuAPP-${platform}-${arch}
 rm LICENSE LICENSES.chromium.html version

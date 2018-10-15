@@ -45,9 +45,14 @@
 > 如果您下载的是构建好的版本, 您可以直接跳过泽一步
 
 ```bash
-cd ./resources/app
+cd ./app
 
-electron-packager . MohuAPP   --out ../../OutApp/ --electron-version 2.0.4 --overwrite --icon=./logo.ico --tmpdir=../../OutApp/Temp/ --ignore=packager.sh --download.cache=../../OutApp/Temp/ --download.mirror="https://npm.taobao.org/mirrors/electron/"
+electron-packager . MohuAPP --app-copyright="Copyright (c) 2018 Xmader" \
+    --platform=${platform} --arch=${arch} --electron-version 3.0.4 \
+    --out ../OutApp/ --overwrite \
+    --icon=./assets/logo.ico --ignore=packager.sh \
+    --tmpdir=../OutApp/Temp/ --download.cache=../OutApp/Temp/ \
+    --download.mirror="https://npm.taobao.org/mirrors/electron/"
 ```
 
 ## 运行
@@ -57,7 +62,7 @@ electron-packager . MohuAPP   --out ../../OutApp/ --electron-version 2.0.4 --ove
 
 ## 备注
 
-* v2.0版的改动非常大，如果有bug，请尽快在[这里](https://github.com/Xmader/mohu/issues)向我反馈
+* 如果有bug，请尽快在[这里](https://github.com/Xmader/mohu/issues)向我反馈
 
 ## 更新历史
 
