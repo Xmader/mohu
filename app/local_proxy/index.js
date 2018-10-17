@@ -30,7 +30,7 @@ let hosts = []
   ]
 */
 
-function loadHosts(filename) {
+const loadHosts = function (filename) {
     const text = fs.readFileSync(filename).toString().trim()
     if (!text.length)
         return
@@ -44,21 +44,14 @@ fs.watch(HOSTS_FILE, function (curr, prev) {
 
 loadHosts(HOSTS_FILE)
 
-function lookupHost(src) {
-    for (var i = hosts.length - 1; i >= 0; i--) {
-        if (hosts[i].regex) {
-            if (src.match(hosts[i].src))
-                return hosts[i].dst
-        } else {
-            if (src == hosts[i].src)
-                return hosts[i].dst
-        }
-    }
+const lookupHost = function (src) {
+    return hosts.reverse().find(
+        x => (x.regex && src.match(x.src)) || (src == x.src)
+    ).dst
 }
 
-
 // 创建 socks5 server
-function createServer() {
+const createServer = function () {
     const server = socks.createServer(function (info, accept, deny) {
         const newAddr = lookupHost(info.dstAddr)
         if (newAddr)
@@ -69,8 +62,7 @@ function createServer() {
     return server
 }
 
-
-function random(min, max) {
+const random = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
