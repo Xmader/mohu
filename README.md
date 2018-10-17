@@ -8,6 +8,8 @@
 
 * 免 番羽土啬 浏览膜乎、辱乎、品葱
 
+* **免 番羽土啬 访问中文维基百科** <!-- 和reddit等被SNI检测方式阻断连接的网站 -->
+
 * 内置一个续命时钟和一个暴力续命程序
 
 * 内置一个 好几百个教授一致通过 的 `膜法指南` 
@@ -71,6 +73,8 @@ electron-packager . MohuAPP --app-copyright="Copyright (c) 2018 Xmader" \
 ## 特别感谢
 
 > 本项目在开发过程中参考了以下项目或用户的部分源代码
+
+* [wikipedia-proxy](https://github.com/Xmader/wikipedia-proxy) (用于免fq访问中文维基百科)
 
 * [Hydrogen](https://github.com/Xmader/hydrogen/tree/linux) (参考了其landing页面)
 

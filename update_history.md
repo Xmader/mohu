@@ -4,8 +4,9 @@
 
 ## v3.0.0
 
+* 实现绕过SNI检测，免fq访问中文维基百科 <small>(使用[wikipedia-proxy本地反代服务器](https://github.com/Xmader/wikipedia-proxy))</small>
 * 大幅优化代码
-* 改为用CI自动化构建 <small>是的，我很懒。</small>
+* 改为用CI自动化构建 <small>(是的，我很懒)</small>
 
 ## v2.2.2
 
