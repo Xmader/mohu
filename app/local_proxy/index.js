@@ -1,6 +1,7 @@
 const fs = require("fs")
 const path = require("path")
 const socks = require("socksv5")
+const zhwp_proxy = require("wikipedia-proxy")
 
 const HOSTS_FILE = path.join(__dirname, "hosts.json")
 
@@ -45,9 +46,10 @@ fs.watch(HOSTS_FILE, function (curr, prev) {
 loadHosts(HOSTS_FILE)
 
 const lookupHost = function (src) {
-    return hosts.reverse().find(
+    const a = hosts.reverse().find(
         x => (x.regex && src.match(x.src)) || (src == x.src)
-    ).dst
+    )
+    return a && a.dst
 }
 
 // 创建 socks5 server
@@ -56,6 +58,7 @@ const createServer = function () {
         const newAddr = lookupHost(info.dstAddr)
         if (newAddr)
             info.dstAddr = newAddr
+        console.log(info)
         accept()
     })
     server.useAuth(socks.auth.None())
@@ -79,5 +82,12 @@ exports.run = function (cb) {
 
     server.on("error", function (err) {
         cb(err)
+    })
+
+    zhwp_proxy.run({
+        port: port + 1,
+        host,
+        protocol: "http",
+        silent: true
     })
 }

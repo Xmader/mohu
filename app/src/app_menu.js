@@ -39,6 +39,10 @@ const openManual = (ty) => {
 
 }
 
+const loadURL = (url) => {
+    getMainWindow().webContents.loadURL(url)
+}
+
 const menuTemplate = [
     {
         label: "页面",
@@ -94,20 +98,24 @@ const menuTemplate = [
                 label: "膜乎",
 
                 click() {
-                    getMainWindow().webContents.loadURL("https://www.mohu.club/")
+                    loadURL("https://www.mohu.club/")
                 }
             },
             {
                 label: "辱乎",
-                click() { getMainWindow().webContents.loadURL("https://ruhu.eu-gb.mybluemix.net/") }
+                click() { loadURL("https://ruhu.eu-gb.mybluemix.net/") }
             },
             {
                 label: "品葱",
-                click() { getMainWindow().webContents.loadURL("https://www.pin-cong.com/") }
+                click() { loadURL("https://www.pin-cong.com/") }
             },
             {
                 label: "端点星计划 (备份微信、微博等平台被删文章)",
-                click() { getMainWindow().webContents.loadURL("https://terminus2049.github.io/") }
+                click() { loadURL("https://terminus2049.github.io/") }
+            },
+            {
+                label: "第三新S1市",
+                click() { loadURL("https://www.reddit.com/r/saraba1st/.compact") }
             },
             {
                 label: "续命",
@@ -138,21 +146,21 @@ const menuTemplate = [
                         label: "Flappy Winnie",
 
                         click() {
-                            getMainWindow().webContents.loadURL(`file://${__dirname}/../pages/flappy_winnie/index.html`)
+                            loadURL(`file://${__dirname}/../pages/flappy_winnie/index.html`)
                         }
                     },
                     {
                         label: "切包子",
 
                         click() {
-                            getMainWindow().webContents.loadURL(`file://${__dirname}/../pages/bao/index.html`)
+                            loadURL(`file://${__dirname}/../pages/bao/index.html`)
                         }
                     },
                     {
                         label: "Flappy Frog",
 
                         click() {
-                            getMainWindow().webContents.loadURL(`file://${__dirname}/../pages/flappy_frog/index.html`)
+                            loadURL(`file://${__dirname}/../pages/flappy_frog/index.html`)
                         }
                     },
                 ]

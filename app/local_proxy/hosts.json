@@ -69,5 +69,20 @@
     {
         "src": "cpro.baidustatic.com",
         "dst": "0.0.0.0"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)redditinc\\.com",
+        "dst": "151.101.1.140"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)reddit\\.com",
+        "dst": "151.101.1.140"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)redd\\.it",
+        "dst": "151.101.1.140"
     }
 ]
