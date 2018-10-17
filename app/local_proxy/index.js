@@ -5,6 +5,7 @@ const zhwp_proxy = require("wikipedia-proxy")
 
 const HOSTS_FILE = path.join(__dirname, "hosts.json")
 
+let zhwp_proxy_port
 let hosts = []
 /*
   hosts 的结构是这样的：
@@ -56,9 +57,13 @@ const lookupHost = function (src) {
 const createServer = function () {
     const server = socks.createServer(function (info, accept, deny) {
         const newAddr = lookupHost(info.dstAddr)
-        if (newAddr)
+        if (newAddr) {
             info.dstAddr = newAddr
-        console.log(info)
+        }
+        else if (info.dstAddr == "zh.wikipedia.org") {
+            info.dstAddr = "127.0.0.1"
+            info.dstPort = zhwp_proxy_port
+        }
         accept()
     })
     server.useAuth(socks.auth.None())
@@ -73,6 +78,7 @@ const random = function (min, max) {
 exports.run = function (cb) {
     const host = "localhost"
     const port = random(20000, 30000) // 从这个范围内随机选一个端口
+    zhwp_proxy_port = port + 1
 
     const server = createServer()
 
@@ -85,9 +91,9 @@ exports.run = function (cb) {
     })
 
     zhwp_proxy.run({
-        port: port + 1,
+        port: zhwp_proxy_port,
         host,
-        protocol: "http",
+        protocol: "https",
         silent: true
     })
 }

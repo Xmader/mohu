@@ -86,6 +86,16 @@ const createWindow = (proxyAddress) => {
             mainWindow.loadURL("https://www.mohu.club/")
         })
 
+        // mainWindow.webContents.session.webRequest.onBeforeRequest(
+        //     {
+        //         urls: ["*://zh.wikipedia.org/*"]
+        //     },
+        //     (details, callback) => {
+        //         const url = details.url.replace(/zh(\.m)?\.wikipedia\.org/, "simple$1.wikipedia.org")
+        //         callback({ redirectURL: url })
+        //     }
+        // )
+
         Menu.setApplicationMenu(menu)
     })
 
@@ -94,6 +104,8 @@ const createWindow = (proxyAddress) => {
         landingWindow.show()
     })
 }
+
+app.commandLine.appendSwitch("ignore-certificate-errors") // 忽略证书相关错误, 因为中文维基百科本地反代服务器使用自签名证书
 
 app.on("ready", () => {
     localProxy.run((error, proxyAddress) => {

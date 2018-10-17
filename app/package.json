@@ -1,7 +1,7 @@
 {
     "name": "mohu",
     "productName": "Mohu APP",
-    "version": "3.0.0-beta.2",
+    "version": "3.0.0",
     "description": "膜乎APP",
     "main": "./main.js",
     "repository": {
@@ -12,7 +12,6 @@
     "scripts": {
         "dev": "electron . dev",
         "start": "electron .",
-        "install": "cd local_proxy && npm install",
         "build-win32": "sh ./packager.sh win32 ia32",
         "build-win64": "sh ./packager.sh win32 x64",
         "build-darwin64": "sh ./packager.sh darwin x64 #只能在*unix系统上运行此打包脚本",
@@ -21,6 +20,7 @@
         "release-patch": "npm version patch"
     },
     "devDependencies": {
+        "electron": "^3.0.4",
         "electron-installer-zip": "^0.1.2",
         "electron-packager": "^12.1.2"
     },
