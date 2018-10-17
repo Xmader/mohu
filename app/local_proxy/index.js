@@ -1,12 +1,10 @@
-'use strict';
+const fs = require("fs")
+const path = require("path")
+const socks = require("socksv5")
 
-var fs = require('fs');
-var path = require('path');
-var socks = require('socksv5');
+const HOSTS_FILE = path.join(__dirname, "hosts.json")
 
-var HOSTS_FILE = path.join(__dirname, 'hosts.json');
-
-var hosts = [];
+let hosts = []
 /*
   hosts 的结构是这样的：
   [
@@ -33,27 +31,27 @@ var hosts = [];
 */
 
 function loadHosts(filename) {
-    var text = fs.readFileSync(filename).toString().trim();
+    const text = fs.readFileSync(filename).toString().trim()
     if (!text.length)
-        return;
-    hosts = JSON.parse(text);
+        return
+    hosts = JSON.parse(text)
 }
 
 // 当 hosts.json 发生改变时重新载入
 fs.watch(HOSTS_FILE, function (curr, prev) {
-    loadHosts(HOSTS_FILE);
-});
+    loadHosts(HOSTS_FILE)
+})
 
-loadHosts(HOSTS_FILE);
+loadHosts(HOSTS_FILE)
 
 function lookupHost(src) {
     for (var i = hosts.length - 1; i >= 0; i--) {
         if (hosts[i].regex) {
             if (src.match(hosts[i].src))
-                return hosts[i].dst;
+                return hosts[i].dst
         } else {
             if (src == hosts[i].src)
-                return hosts[i].dst;
+                return hosts[i].dst
         }
     }
 }
@@ -61,32 +59,33 @@ function lookupHost(src) {
 
 // 创建 socks5 server
 function createServer() {
-    var server = socks.createServer(function (info, accept, deny) {
-        var newAddr = lookupHost(info.dstAddr);
+    const server = socks.createServer(function (info, accept, deny) {
+        const newAddr = lookupHost(info.dstAddr)
         if (newAddr)
-            info.dstAddr = newAddr;
-        accept();
-    });
-    server.useAuth(socks.auth.None());
-    return server;
+            info.dstAddr = newAddr
+        accept()
+    })
+    server.useAuth(socks.auth.None())
+    return server
 }
 
 
 function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 // 在 localhost 上运行一个 socks5 server
 exports.run = function (cb) {
-    var host = 'localhost',
-        port = random(20000, 30000); // 从这个范围内随机选一个端口
+    const host = "localhost"
+    const port = random(20000, 30000) // 从这个范围内随机选一个端口
 
-    var server = createServer();
+    const server = createServer()
+
     server.listen(port, host, function () {
-        cb(null, host + ':' + port);
-    });
+        cb(null, host + ":" + port)
+    })
 
-    server.on('error', function (err) {
-        cb(err);
-    });
-};
+    server.on("error", function (err) {
+        cb(err)
+    })
+}
