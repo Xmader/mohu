@@ -86,16 +86,6 @@ const createWindow = (proxyAddress) => {
             mainWindow.loadURL("https://www.mohu.club/")
         })
 
-        // mainWindow.webContents.session.webRequest.onBeforeRequest(
-        //     {
-        //         urls: ["*://zh.wikipedia.org/*"]
-        //     },
-        //     (details, callback) => {
-        //         const url = details.url.replace(/zh(\.m)?\.wikipedia\.org/, "simple$1.wikipedia.org")
-        //         callback({ redirectURL: url })
-        //     }
-        // )
-
         Menu.setApplicationMenu(menu)
     })
 
