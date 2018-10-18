@@ -60,7 +60,7 @@ const createServer = function () {
         if (newAddr) {
             info.dstAddr = newAddr
         }
-        else if (info.dstAddr == "zh.wikipedia.org") {
+        else if (info.dstAddr == "zh.wikipedia.org" || info.dstAddr.includes("www.reddit.com")) {
             info.dstAddr = "127.0.0.1"
             info.dstPort = zhwp_proxy_port
         }
