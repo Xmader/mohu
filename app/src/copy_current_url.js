@@ -7,7 +7,7 @@
 const { dialog, BrowserWindow, clipboard } = require("electron")
 
 module.exports = () => {
-    const url = BrowserWindow.getFocusedWindow().webContents.getURL()
+    const url = decodeURI(BrowserWindow.getFocusedWindow().webContents.getURL())
 
     clipboard.writeText(url)
 
@@ -16,6 +16,8 @@ module.exports = () => {
         buttons: ["确定"],
         defaultId: 0,
         title: "复制成功",
-        message: `已复制 '${url}' 到剪贴板`,
+        message: `已复制 '${
+            new Array(Math.ceil(url.length / 50)).fill(null).map((x, i) => url.slice(i * 50, (i + 1) * 50)).join("\n") // 每50个字符换行，否则会显示不完整
+        }' 到剪贴板`,
     })
 }
