@@ -2,6 +2,10 @@
 
 > 一个软件的命运啊，当然要靠自我奋斗，但是也要考虑到历史的行程
 
+## v3.0.1
+
+* 实现绕过SNI检测，免fq访问reddit
+
 ## v3.0.0
 
 * 实现绕过SNI检测，免fq访问中文维基百科 <small>(使用[wikipedia-proxy本地反代服务器](https://github.com/Xmader/wikipedia-proxy))</small>
