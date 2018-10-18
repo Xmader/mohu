@@ -71,18 +71,32 @@
         "dst": "0.0.0.0"
     },
     {
+        "src": "www.googletagservices.com",
+        "dst": "203.208.41.89"
+    },
+    {
         "regex": true,
         "src": "(.*\\.|)redditinc\\.com",
-        "dst": "151.101.1.140"
+        "dst": "151.101.41.140"
     },
     {
         "regex": true,
         "src": "(.*\\.|)reddit\\.com",
-        "dst": "151.101.1.140"
+        "dst": "151.101.41.140"
     },
     {
         "regex": true,
         "src": "(.*\\.|)redd\\.it",
-        "dst": "151.101.1.140"
+        "dst": "151.101.41.140"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)redditstatic\\.com",
+        "dst": "151.101.41.140"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)redditmedia\\.com",
+        "dst": "151.101.41.140"
     }
 ]

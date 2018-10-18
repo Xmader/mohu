@@ -114,6 +114,10 @@ const menuTemplate = [
                 click: () => { loadURL("https://zh.wikipedia.org/") }
             },
             {
+                label: "reddit",
+                click: () => { loadURL("https://www.reddit.com/") }
+            },
+            {
                 label: "端点星计划 (备份微信、微博等平台被删文章)",
                 click() { loadURL("https://terminus2049.github.io/") }
             },
