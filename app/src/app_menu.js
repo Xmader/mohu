@@ -221,7 +221,7 @@ const menuTemplate = [
         submenu: [
             {
                 label: "检查更新",
-                click() { check_update() }
+                click() { check_update(true) }
             },
             {
                 label: "关于",
