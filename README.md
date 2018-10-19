@@ -28,15 +28,15 @@
 
 你可以下载源码自行构建, 或者直接在下面下载构建好的可执行版本:
 
-[Windows 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-ia32.zip)
+[Windows 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v2/MohuAPP-win32-ia32.zip)
 
-[Windows 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-x64.zip)
+[Windows 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v2/MohuAPP-win32-x64.zip)
 
-[Linux 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-ia32.zip)
+[Linux 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v2/MohuAPP-linux-ia32.zip)
 
-[Linux 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-x64.zip)
+[Linux 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v2/MohuAPP-linux-x64.zip)
 
-[MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
+[MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/v2/MohuAPP-darwin-x64.zip)
 
 <!-- [查看Android版 (作者: 膜乎用户@辱乎)](https://www.mohu.club/article/170) -->
 
