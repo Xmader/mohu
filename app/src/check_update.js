@@ -55,7 +55,7 @@ const check_update = async (manual = false) => {
         try {
             const releases = await (await fetch(getReleasesApi)).json()
             if (releases.name != `v${new_version}` || releases.assets.length != 4) {
-                return dialog.showMessageBox({
+                return manual && dialog.showMessageBox({
                     type: "warning",
                     buttons: ["重试", "取消"],
                     defaultId: 0,
