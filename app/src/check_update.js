@@ -13,6 +13,7 @@ let arch = process.arch
 if (arch == "x32") arch = "ia32"
 
 const versionCheckApi = "https://raw.githubusercontent.com/Xmader/mohu/master/app/package.json"
+const getReleasesApi = "https://api.github.com/repos/Xmader/mohu/releases/latest"
 
 /**
  * @param {string} version
@@ -51,6 +52,27 @@ const check_update = async (manual = false) => {
     const new_version_formatted = format_version(new_version)
 
     if (version_formatted < new_version_formatted) {
+        try {
+            const releases = await (await fetch(getReleasesApi)).json()
+            if (releases.name != `v${new_version}` || releases.assets.length != 4) {
+                return dialog.showMessageBox({
+                    type: "warning",
+                    buttons: ["重试", "取消"],
+                    defaultId: 0,
+                    cancelId: 1,
+                    title: "膜乎APP",
+                    message: `已发现新版本, 但最新版本 v${new_version} 正在构建中, 请耐心等候...`
+                }, (response) => {
+                    if (response == 0) {
+                        check_update(true)
+                    }
+                })
+            }
+        }
+        catch (e) {
+            console.error("访问GithubAPI失败")
+        }
+
         found_new_version(version, new_version)
     } else if (manual) {
         dialog.showMessageBox({
