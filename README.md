@@ -2,7 +2,7 @@
 
 一个simple的膜乎免 番羽土啬 APP
 
-[![+1s](%CE%98..%CE%98-%2B1s-green.svg)](https://zh.wikipedia.org/wiki/%E8%86%9C%E8%9B%A4%E6%96%87%E5%8C%96)
+[![+1s](%CE%98..%CE%98-%2B1s-green.svg)](https://zh.wikipedia.org/wiki/%E8%86%9C%E8%9B%A4%E6%96%87%E5%8C%96) [![构建状态](https://dev.azure.com/xmader/apps/_apis/build/status/MohuAPP?branchName=master)](https://dev.azure.com/xmader/apps/_build/latest?definitionId=6)
 
 ## 功能
 
@@ -30,15 +30,9 @@
 
 你可以下载源码自行构建, 或者直接在下面下载构建好的可执行版本:
 
-[Windows 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-ia32.zip)
+[Github Releases](https://github.com/Xmader/mohu/releases/latest)
 
-[Windows 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-win32-x64.zip)
-
-[Linux 32位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-ia32.zip)
-
-[Linux 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-linux-x64.zip)
-
-[MacOS 64位版](https://mohu.oss-cn-shanghai.aliyuncs.com/MohuAPP-darwin-x64.zip)
+<!-- [Azure DevOps 分流](https://dev.azure.com/xmader/apps/_build/latest?definitionId=6) -->
 
 <!-- [查看Android版 (作者: 膜乎用户@辱乎)](https://www.mohu.club/article/170) -->
 
