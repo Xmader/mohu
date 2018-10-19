@@ -1,0 +1,28 @@
+{
+    "name": "mohu",
+    "productName": "Mohu APP",
+    "version": "3.0.1",
+    "description": "膜乎APP",
+    "main": "./main.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Xmader/mohu"
+    },
+    "author": "xmader",
+    "scripts": {
+        "dev": "electron . dev",
+        "start": "electron .",
+        "build-win32": "sh ./packager.sh win32 ia32",
+        "build-win64": "sh ./packager.sh win32 x64",
+        "build-darwin64": "sh ./packager.sh darwin x64 #只能在*unix系统上运行此打包脚本",
+        "build-linux64": "sh ./packager.sh linux x64",
+        "release": "npm version minor",
+        "release-patch": "npm version patch"
+    },
+    "devDependencies": {
+        "electron": "^3.0.4",
+        "electron-installer-zip": "^0.1.2",
+        "electron-packager": "^12.1.2"
+    },
+    "license": "MIT"
+}

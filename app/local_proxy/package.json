@@ -1,0 +1,16 @@
+{
+  "name": "local_proxy",
+  "version": "1.1.0",
+  "description": "本地socksv5代理, 用于替换hosts",
+  "main": "index.js",
+  "dependencies": {
+    "socksv5": "^0.0.6",
+    "wikipedia-proxy": "github:Xmader/wikipedia-proxy"
+  },
+  "author": "Xmader",
+  "contributors": [
+    "Xmader",
+    "angryjones"
+  ],
+  "license": "MIT"
+}

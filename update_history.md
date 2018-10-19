@@ -2,6 +2,16 @@
 
 > 一个软件的命运啊，当然要靠自我奋斗，但是也要考虑到历史的行程
 
+## v3.0.1
+
+* 实现绕过SNI检测，免fq访问reddit
+
+## v3.0.0
+
+* 实现绕过SNI检测，免fq访问中文维基百科 <small>(使用[wikipedia-proxy本地反代服务器](https://github.com/Xmader/wikipedia-proxy))</small>
+* 大幅优化代码
+* 改为用CI自动化构建 <small>(是的，我很懒)</small>
+
 ## v2.2.2
 
 * 滋磁免 番羽土啬 访问端点星计划 (在GitHub上搭建的一个用于备份微信、微博等平台被删文章的站点)

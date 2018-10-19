@@ -3,5 +3,5 @@
 /upload/settings.py
 /upload/settings.pyc
 /upload/settings.pyo
-mogicians_manual/.git
-uwp.sh
+/app/node_modules
+/*.PNG
