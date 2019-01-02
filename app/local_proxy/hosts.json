@@ -16,6 +16,10 @@
         "dst": "104.27.147.183"
     },
     {
+        "src": "zh.wikipedia.org",
+        "dst": "91.198.174.192"
+    },
+    {
         "src": "zh.wikinews.org",
         "dst": "91.198.174.192"
     },
@@ -73,6 +77,11 @@
     {
         "src": "www.googletagservices.com",
         "dst": "203.208.41.89"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)reddit\\.com",
+        "dst": "151.101.1.140"
     },
     {
         "regex": true,

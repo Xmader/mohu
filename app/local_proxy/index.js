@@ -1,11 +1,9 @@
 const fs = require("fs")
 const path = require("path")
-const socks = require("socksv5")
-const zhwp_proxy = require("wikipedia-proxy")
+const socks = require("wikipedia-proxy")
 
 const HOSTS_FILE = path.join(__dirname, "hosts.json")
 
-let zhwp_proxy_port
 let hosts = []
 /*
   hosts 的结构是这样的：
@@ -40,35 +38,11 @@ const loadHosts = function (filename) {
 }
 
 // 当 hosts.json 发生改变时重新载入
-fs.watch(HOSTS_FILE, function (curr, prev) {
+fs.watch(HOSTS_FILE, function () {
     loadHosts(HOSTS_FILE)
 })
 
 loadHosts(HOSTS_FILE)
-
-const lookupHost = function (src) {
-    const a = hosts.reverse().find(
-        x => (x.regex && src.match(x.src)) || (src == x.src)
-    )
-    return a && a.dst
-}
-
-// 创建 socks5 server
-const createServer = function () {
-    const server = socks.createServer(function (info, accept, deny) {
-        const newAddr = lookupHost(info.dstAddr)
-        if (newAddr) {
-            info.dstAddr = newAddr
-        }
-        else if (info.dstAddr == "zh.wikipedia.org" || info.dstAddr.includes("www.reddit.com")) {
-            info.dstAddr = "127.0.0.1"
-            info.dstPort = zhwp_proxy_port
-        }
-        accept()
-    })
-    server.useAuth(socks.auth.None())
-    return server
-}
 
 const random = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -78,22 +52,20 @@ const random = function (min, max) {
 exports.run = function (cb) {
     const host = "localhost"
     const port = random(20000, 30000) // 从这个范围内随机选一个端口
-    zhwp_proxy_port = port + 1
 
-    const server = createServer()
-
-    server.listen(port, host, function () {
-        cb(null, host + ":" + port)
+    const server = socks.run({
+        protocol: "socks5",
+        host,
+        port,
+        silent: true,
+        hostsConfig: hosts
     })
 
-    server.on("error", function (err) {
+    server.on("error", (err) => {
         cb(err)
     })
 
-    zhwp_proxy.run({
-        port: zhwp_proxy_port,
-        host,
-        protocol: "https",
-        silent: true
+    server.once("listening", () => {
+        cb(null, host + ":" + port)
     })
 }
