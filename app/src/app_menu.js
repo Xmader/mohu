@@ -95,19 +95,22 @@ const menuTemplate = [
 
         submenu: [
             {
-                label: "膜乎",
-
+                label: "膜乎备份",
                 click() {
-                    loadURL("https://www.mohu.club/")
+                    loadURL("https://mohubackup.github.io/")
                 }
             },
+            // {
+            //     label: "辱乎",
+            //     click() { loadURL("https://ruhu.eu-gb.mybluemix.net/") }
+            // },
+            // {
+            //     label: "品葱备份",
+            //     click() { loadURL("https://pincong.rocks/topic/品葱备份") }
+            // },
             {
-                label: "辱乎",
-                click() { loadURL("https://ruhu.eu-gb.mybluemix.net/") }
-            },
-            {
-                label: "品葱",
-                click() { loadURL("https://www.pin-cong.com/") }
+                label: "新品葱",
+                click() { loadURL("https://pincong.rocks/") }
             },
             {
                 label: "中文维基百科",

@@ -83,7 +83,7 @@ const createWindow = (proxyAddress) => {
         mainWindow.webContents.session.setProxy({
             proxyRules: "socks5://" + proxyAddress
         }, function () {
-            mainWindow.loadURL("https://www.mohu.club/")
+            mainWindow.loadURL("https://mohubackup.github.io/")
         })
 
         Menu.setApplicationMenu(menu)
