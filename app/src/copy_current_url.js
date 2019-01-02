@@ -1,7 +1,7 @@
 /**
  * copy_current_url.js - 复制当前URL到剪贴板
  * @author Xmader
- * @copyright Copyright (c) 2018 Xmader
+ * @copyright Copyright (c) 2018-2019 Xmader
  */
 
 const { dialog, BrowserWindow, clipboard } = require("electron")

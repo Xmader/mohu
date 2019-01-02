@@ -1,7 +1,7 @@
 /**
  * pre.js - 用于外部页面的预加载脚本
  * @author Xmader
- * @copyright Copyright (c) 2018 Xmader
+ * @copyright Copyright (c) 2018-2019 Xmader
  */
 
 const { ipcRenderer } = require("electron")

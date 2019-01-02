@@ -1,7 +1,7 @@
 /**
  * 续命时钟
  * @author Xmader
- * @copyright Copyright (c) 2018 Xmader
+ * @copyright Copyright (c) 2018-2019 Xmader
  */
 
 const now = new Date()

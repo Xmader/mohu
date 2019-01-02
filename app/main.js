@@ -3,7 +3,7 @@
  * 膜乎免`番羽土啬`APP
  * 
  * @author Xmader
- * @copyright Copyright (c) 2018 Xmader
+ * @copyright Copyright (c) 2018-2019 Xmader
  * 
  * Source Code: https://github.com/Xmader/mohu
  */

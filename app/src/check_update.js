@@ -1,7 +1,7 @@
 /**
  * 检查更新
  * @author Xmader
- * @copyright Copyright (c) 2018 Xmader
+ * @copyright Copyright (c) 2018-2019 Xmader
  */
 
 const fetch = require("../libs/node-fetch")

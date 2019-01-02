@@ -43,7 +43,7 @@
 ```bash
 cd ./app
 
-electron-packager . MohuAPP --app-copyright="Copyright (c) 2018 Xmader" \
+electron-packager . MohuAPP --app-copyright="Copyright (c) 2018-2019 Xmader" \
     --platform=${platform} --arch=${arch} --electron-version 3.0.4 \
     --out ../OutApp/ --overwrite \
     --icon=./assets/logo.ico --ignore=packager.sh \
