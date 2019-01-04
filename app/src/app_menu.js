@@ -129,6 +129,10 @@ const menuTemplate = [
                 click: () => { loadURL("https://cloudflare-ipfs.com/ipns/progr.tk") }
             },
             {
+                label: "一只鹿ㄦ的博客",
+                click: () => { loadURL("https://medium.com/一只鹿ㄦ") }
+            },
+            {
                 label: "reddit",
                 click: () => { loadURL("https://www.reddit.com/") }
             },
