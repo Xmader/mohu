@@ -16,6 +16,37 @@
         "dst": "104.27.147.183"
     },
     {
+        "regex": true,
+        "src": "(www\\.)?pincong\\.rocks",
+        "dst": "104.18.54.73"
+    },
+    {
+        "regex": true,
+        "src": "(www\\.)?2049bbs\\.xyz",
+        "dst": "45.77.134.176"
+    },
+    {
+        "regex": true,
+        "src": "(.*\\.|)freewechat\\.com",
+        "dst": "104.25.179.28"
+    },
+    {
+        "src": "rules.quantcount.com",
+        "dst": "13.35.8.50"
+    },
+    {
+        "src": "ajax.googleapis.com",
+        "dst": "ajax.proxy.ustclug.org"
+    },
+    {
+        "src": "progr.tk",
+        "dst": "104.18.253.167"
+    },
+    {
+        "src": "cloudflare-ipfs.com",
+        "dst": "104.18.253.167"
+    },
+    {
         "src": "zh.wikipedia.org",
         "dst": "91.198.174.192"
     },

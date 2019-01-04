@@ -109,12 +109,24 @@ const menuTemplate = [
             //     click() { loadURL("https://pincong.rocks/topic/品葱备份") }
             // },
             {
+                label: "膜乎8Chan",
+                click() { loadURL("https://8ch.net/mohu/") }
+            },
+            {
                 label: "新品葱",
                 click() { loadURL("https://pincong.rocks/") }
             },
             {
+                label: "2049BBS",
+                click() { loadURL("https://2049bbs.xyz/") }
+            },
+            {
                 label: "中文维基百科",
                 click: () => { loadURL("https://zh.wikipedia.org/") }
+            },
+            {
+                label: "编程随想的博客 (在ipfs上的镜像站)",
+                click: () => { loadURL("https://cloudflare-ipfs.com/ipns/progr.tk") }
             },
             {
                 label: "reddit",
@@ -123,6 +135,10 @@ const menuTemplate = [
             {
                 label: "端点星计划 (备份微信、微博等平台被删文章)",
                 click() { loadURL("https://terminus2049.github.io/") }
+            },
+            {
+                label: "自由微信",
+                click() { loadURL("https://freewechat.com/") }
             },
             {
                 label: "第三新S1市",
