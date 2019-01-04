@@ -6,7 +6,7 @@
 
 ## 功能
 
-* 免 番羽土啬 浏览膜乎、辱乎、品葱
+* 免 番羽土啬 浏览~~膜乎~~、~~品葱~~、膜乎备份、新品葱、2049BBS、编程随想的博客 (镜像站)
 
 * **免 番羽土啬 访问中文维基百科和reddit等被用SNI检测方式屏蔽的网站**
 
@@ -34,7 +34,7 @@
 
 <!-- [Azure DevOps 分流](https://dev.azure.com/xmader/apps/_build/latest?definitionId=6) -->
 
-<!-- [查看Android版 (作者: 膜乎用户@辱乎)](https://www.mohu.club/article/170) -->
+<!-- [查看Android版 (作者: 膜乎用户@辱乎)](https://mohubackup.github.io/article/170) -->
 
 ## 构建
 
