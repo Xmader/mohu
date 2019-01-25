@@ -104,10 +104,10 @@ const menuTemplate = [
             //     label: "辱乎",
             //     click() { loadURL("https://ruhu.eu-gb.mybluemix.net/") }
             // },
-            // {
-            //     label: "品葱备份",
-            //     click() { loadURL("https://pincong.rocks/topic/品葱备份") }
-            // },
+            {
+                label: "品葱备份计划",
+                click() { loadURL("https://pincongbackup.github.io/") }
+            },
             {
                 label: "膜乎8Chan",
                 click() { loadURL("https://8ch.net/mohu/") }
